@@ -18,3 +18,5 @@
 <h4> - Go to settings in the unblocker and click restart proxy.</h4>
 <h4> - If the above doesn't work, clear the site cookies.</h4>
 <h4> - i banged someones mother.</h4>
+<h2>Credits</h2>
+jo mama and charlie
