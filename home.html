@@ -197,47 +197,73 @@
             justify-content: center;
             align-items: center;
         }
-     .bttn-container {
-              position: absolute;
-              bottom: 36%;
-              left: 50%;
-              transform: translateX(-50%);
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 100%;
-           }
+         * {
+      margin: 0;
+      padding: 0;
+    }
 
-        .bttn {
-            background-color: grey;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 12px;
-            transition: transform 0.5s;
-            margin: 0 5px; /* Add margin between buttons */
-        }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 50px;
+      background: #161616;
+      flex-direction: column;
+      margin-top: 50px; /* Add margin-top for spacing */
+    }
 
-        .bttn:hover {
-            transform: translateY(-5px);
-        }
+    .button-container {
+      display: flex;
+      gap: 50px;
+    }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
+    a {
+      position: relative;
+      text-decoration: none;
+      background: #222;
+      padding: 20px 60px;
+      border-radius: 50px;
+      color: #999;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      overflow: hidden;
+    }
 
-        .bttn:hover {
-            animation: float 2s ease infinite;
-        }
+    a:hover {
+      color: var(--clr);
+      text-shadow: 0 0 15px var(--clr), 0 0 40px var(--clr);
+    }
+
+    a span {
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.2rem;
+    }
+  
+     a {
+  position: relative;
+  text-decoration: none;
+  background: #222;
+  padding: 15px 40px; /* Adjusted padding */
+  border-radius: 50px;
+  color: #999;
+  font-size: 1.2rem; /* Adjusted font size */
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+    a:hover::before {
+      opacity: 1;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: rgba(45, 45, 45, 0.8);
+      border-radius: 50px;
+    }
 </style>
 <script>
     
@@ -422,9 +448,21 @@ function isUrl(val = '') {
       }
     });
   });
+  
+      let btns = document.querySelectorAll("a");
+
+    btns.forEach((btn) => {
+      btn.onmousemove = function (e) {
+        let x = e.pageX - btn.offsetLeft;
+        let y = e.pageY - btn.offsetTop;
+
+        btn.style.setProperty("--x", x + "px");
+        btn.style.setProperty("--y", y + "px");
+      };
+    });
 </script>
 </body>
-<div class="bttn-container">
-   <a href="https://discord.gg/Fb92pTtaJT" class="bttn">Discord</a>
-   <a href="https://github.com/epicdev293/Nugget-lockerun" class="bttn">Github</a>
-</div>
+  <div class="button-container">
+    <a href="https://discord.gg/2rEh5cmT6p" style="--clr: #0f0"><span>Discord</span></a>
+    <a href="https://github.com/epicdev293/Nugget-lockerun" style="--clr: #0ff"><span>Github</span></a>
+  </div>
