@@ -20,4 +20,4 @@
 <h4> - i banged someones mother.</h4>
 <h2>Credits</h2>
 jo mama and charlie and xdevman for making shitty code better
-<h4>Aslo side note charlies credits have been here this entire time so L charlie he's just mad that I banned him for posting a IP Logger lol</h4>
+<h4>Aslo side note charlies credits have been here this entire time so L charlie he's just mad that I banned him for posting a IP Logger lol, oh and also a lot of these buttons will be fixed</h4>
